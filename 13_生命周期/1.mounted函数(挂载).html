@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h3 :style="{opacity}">欢迎学习vue</h3>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: '#root',
+            data: {
+                opacity: 1
+            },
+            methods: {},
+            // vue完成模板解析就把初始的真实DOM放入页面，完成挂载，在运行mounted函数
+            mounted() {
+                setInterval(() => {
+                    this.opacity -= 0.01
+                    if (this.opacity <= 0) {
+                        this.opacity = 1
+                    }
+                }, 20)
+
+            },
+        });
+    </script>
+</body>
+
+</html>

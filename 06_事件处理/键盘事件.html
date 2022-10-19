@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <input type="text" placeholder="按下提示信息" @keyup.enter="showInfo">
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#root',
+            data: {},
+            methods: {
+                showInfo(e){
+                    // console.log(e.key,e.keyCode);
+                    console.log(e.target.value);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

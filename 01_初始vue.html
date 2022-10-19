@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../vue.js/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- 插值语句 -->
+        <h2>hello,{{name}},{{age}},{{adress}}</h2><br>
+
+        <!-- 指令语句 -->
+        <a v-bind:href="url">点击去bilibili学习</a> <!-- v-bind绑定 可简写成 : -->
+
+        <a :href="url.toUpperCase()">点击去{{school.name}}学习</a>
+    </div>
+
+    <script type="text/javascript">
+        // 创建vue实例 
+        const vm = new Vue({
+            el: '#root',  //el用于指定当前的vue实例为那个容器服务，值通常是css选择器字符串
+            data: {     //用于存储数据
+                name: 'kugou',
+                age: '18',
+                adress: 'beijing',
+                url: 'http://www.bilibili.com',
+                school: {
+                    name: '尚硅谷',
+                    age: '18',
+                    sex:'男'
+                }
+            }
+        })
+
+    </script>
+
+
+
+</body>
+
+</html>

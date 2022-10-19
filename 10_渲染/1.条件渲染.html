@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>当前n的值：{{n}}</h2>
+        <button @click="n++">点我加一</button>
+
+        <!-- 使用v-show做条件渲染 -->
+        <!-- <div v-show="n === 1">1</div>
+        <div v-show="n === 2">2</div>
+        <div v-show="n === 3">3</div> -->
+
+        <!-- 使用v-if做条件渲染 ,中间不能被打断-->
+        <div v-if="n === 1">1</div>
+        <div v-else-if="n === 2">2</div>
+        <div v-else-if="n === 3">3</div>
+        <div v-else>4</div>
+
+        <!-- 在 template 只能使用v-if -->
+        <template v-if="n===1">
+
+            <h2>w</h2>
+            <h2>s</h2>
+            <h2>x</h2>
+
+        </template>
+
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#root',
+            data: {
+                n: 0
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
