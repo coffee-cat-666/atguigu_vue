@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h3>当前n的值{{n}}</h3>
+        <button @click="add">点我++</button>
+        <button @click="bey">点我销毁</button>
+
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: '#root',
+            data: {
+                n: 1
+            },
+            methods: {
+                add() {
+                    console.log("add");
+                    this.n += 1
+                },
+                // 销毁vue
+                bey() {
+                    console.log("bey");
+                    this.$destroy()
+                }
+            },
+
+        });
+    </script>
+</body>
+
+</html>
