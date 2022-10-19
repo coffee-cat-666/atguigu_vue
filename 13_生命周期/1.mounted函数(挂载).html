@@ -12,6 +12,7 @@
 <body>
     <div id="root">
         <h3 :style="{opacity}">欢迎学习vue</h3>
+        <button @click="stop">停止</button>
     </div>
 
 
@@ -21,10 +22,16 @@
             data: {
                 opacity: 1
             },
-            methods: {},
+            methods: {
+                stop(){
+                    // 停止定时器
+                    // clearInterval(this.timer)
+                    
+                }
+            },
             // vue完成模板解析就把初始的真实DOM放入页面，完成挂载，在运行mounted函数
             mounted() {
-                setInterval(() => {
+                this.timer=setInterval(() => {
                     this.opacity -= 0.01
                     if (this.opacity <= 0) {
                         this.opacity = 1
