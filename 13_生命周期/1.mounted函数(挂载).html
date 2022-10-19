@@ -36,6 +36,7 @@
                 stop() {
                     // 停止定时器
                     // clearInterval(this.timer)
+                    this.$destroy()
 
                 }
             },
@@ -48,6 +49,15 @@
                     }
                 }, 20)
 
+            },
+
+            beforeDestroy() {
+                clearInterval(this.timer)
+                console.log('vue即将销毁');
+            },
+            
+            destroyed() {
+                console.log('vue已销毁');
             },
         });
     </script>
