@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <school></school>
+        <hr />
+
+    </div>
+
+    <script type="text/javascript">
+
+        const school = Vue.extend({
+            template: `
+                  <div>
+                  <h2>学校名称:{{ schoolName }}</h2>
+                  <h2>学校地址:{{ address }}</h2>
+                  </div>
+                `,
+
+            data() {
+                return {
+                    schoolName: '武汉科技大学',
+                    address: '武汉',
+                }
+            },
+
+        })
+
+        // 创建vm
+        new Vue({
+            el: "#root",
+            //配置组件(局部注册)
+            data: {
+            },
+            components: {
+                school
+            },
+        })
+
+    </script>
+</body>
+
+</html>
